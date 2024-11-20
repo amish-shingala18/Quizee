@@ -62,11 +62,12 @@ class QuizActivity : AppCompatActivity() {
             binding.cvOption3.setCardBackgroundColor(resources.getColor(R.color.white))
             binding.cvOption4.setCardBackgroundColor(resources.getColor(R.color.white))
             binding.btnNext.visibility = View.GONE
+            selectAtleastOne()
             if (quizViewModel.index.value!!+1 == 10) {
                 binding.btnNext.text = "SUBMIT"
                 binding.btnNext.setOnClickListener {
                     val intent = Intent(this, ResultActivity::class.java)
-                    intent.putExtra("correctAnswer",quizViewModel.correctAnswer)
+                    intent.putExtra("correctAnswer", quizViewModel.correctAnswer)
                     startActivity(intent)
                 }
             } else {
