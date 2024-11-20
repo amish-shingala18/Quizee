@@ -62,7 +62,6 @@ class QuizActivity : AppCompatActivity() {
             binding.cvOption3.setCardBackgroundColor(resources.getColor(R.color.white))
             binding.cvOption4.setCardBackgroundColor(resources.getColor(R.color.white))
             binding.btnNext.visibility = View.GONE
-            selectAtleastOne()
             if (quizViewModel.index.value!!+1 == 10) {
                 binding.btnNext.text = "SUBMIT"
                 binding.btnNext.setOnClickListener {
@@ -93,10 +92,6 @@ class QuizActivity : AppCompatActivity() {
         binding.cvOption1.setOnClickListener {
             if(binding.txtOption1.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                 binding.cvOption1.setCardBackgroundColor(resources.getColor(R.color.green))
-                binding.cvOption1.isClickable=false
-                binding.cvOption2.isClickable=false
-                binding.cvOption3.isClickable=false
-                binding.cvOption4.isClickable=false
             }else{
                 binding.cvOption1.setCardBackgroundColor(resources.getColor(R.color.red))
                 if(binding.txtOption2.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
@@ -106,20 +101,13 @@ class QuizActivity : AppCompatActivity() {
                 }else if(binding.txtOption4.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                     binding.cvOption4.setCardBackgroundColor(resources.getColor(R.color.green))
                 }
-                binding.cvOption1.isClickable=false
-                binding.cvOption2.isClickable=false
-                binding.cvOption3.isClickable=false
-                binding.cvOption4.isClickable=false
             }
+            unClick()
             binding.btnNext.visibility=View.VISIBLE
         }
         binding.cvOption2.setOnClickListener {
             if(binding.txtOption2.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                 binding.cvOption2.setCardBackgroundColor(resources.getColor(R.color.green))
-                binding.cvOption1.isClickable=false
-                binding.cvOption2.isClickable=false
-                binding.cvOption3.isClickable=false
-                binding.cvOption4.isClickable=false
             }else{
                 binding.cvOption2.setCardBackgroundColor(resources.getColor(R.color.red))
                 if(binding.txtOption1.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
@@ -129,20 +117,13 @@ class QuizActivity : AppCompatActivity() {
                 }else if(binding.txtOption4.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                     binding.cvOption4.setCardBackgroundColor(resources.getColor(R.color.green))
                 }
-                binding.cvOption1.isClickable=false
-                binding.cvOption2.isClickable=false
-                binding.cvOption3.isClickable=false
-                binding.cvOption4.isClickable=false
             }
+            unClick()
             binding.btnNext.visibility=View.VISIBLE
         }
         binding.cvOption3.setOnClickListener {
             if(binding.txtOption3.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                 binding.cvOption3.setCardBackgroundColor(resources.getColor(R.color.green))
-                binding.cvOption1.isClickable=false
-                binding.cvOption2.isClickable=false
-                binding.cvOption3.isClickable=false
-                binding.cvOption4.isClickable=false
             }else{
                 binding.cvOption3.setCardBackgroundColor(resources.getColor(R.color.red))
                 if(binding.txtOption2.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
@@ -152,20 +133,13 @@ class QuizActivity : AppCompatActivity() {
                 }else if(binding.txtOption4.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                     binding.cvOption4.setCardBackgroundColor(resources.getColor(R.color.green))
                 }
-                binding.cvOption1.isClickable=false
-                binding.cvOption2.isClickable=false
-                binding.cvOption3.isClickable=false
-                binding.cvOption4.isClickable=false
             }
+            unClick()
             binding.btnNext.visibility=View.VISIBLE
         }
         binding.cvOption4.setOnClickListener {
             if(binding.txtOption4.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                 binding.cvOption4.setCardBackgroundColor(resources.getColor(R.color.green))
-                binding.cvOption1.isClickable=false
-                binding.cvOption2.isClickable=false
-                binding.cvOption3.isClickable=false
-                binding.cvOption4.isClickable=false
             }else{
                 binding.cvOption4.setCardBackgroundColor(resources.getColor(R.color.red))
                 if(binding.txtOption2.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
@@ -175,13 +149,16 @@ class QuizActivity : AppCompatActivity() {
                 }else if(binding.txtOption1.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                     binding.cvOption1.setCardBackgroundColor(resources.getColor(R.color.green))
                 }
-                binding.cvOption1.isClickable=false
-                binding.cvOption2.isClickable=false
-                binding.cvOption3.isClickable=false
-                binding.cvOption4.isClickable=false
             }
+            unClick()
             binding.btnNext.visibility=View.VISIBLE
         }
+    }
+    private fun unClick() {
+        binding.cvOption1.isClickable = false
+        binding.cvOption2.isClickable = false
+        binding.cvOption3.isClickable = false
+        binding.cvOption4.isClickable = false
     }
     private fun startTimer() {
         countDownTimer = object : CountDownTimer(30000, 1000) {
