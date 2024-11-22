@@ -6,14 +6,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.quizeeapp.data.helper.AuthenticationHelper.Companion.authHelper
 import com.example.quizeeapp.databinding.ActivityMainBinding
 import com.example.quizeeapp.view.activity.QuizActivity
+import com.example.quizeeapp.view.activity.SignInActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, QuizActivity::class.java)
             intent.putExtra("category", "21")
             startActivity(intent)
+        }
+        binding.imgLogout.setOnClickListener {
+            authHelper.logout()
+            startActivity(Intent(this@MainActivity, SignInActivity::class.java))
         }
     }
 }

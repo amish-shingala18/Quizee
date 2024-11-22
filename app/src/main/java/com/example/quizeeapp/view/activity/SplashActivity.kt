@@ -24,7 +24,6 @@ class SplashActivity : AppCompatActivity() {
             insets
         }
         authHelper.checkUser()
-        Log.d("TAG", "onCreate: ===================================================${authHelper.user!!.email}")
         Handler(Looper.getMainLooper()).postDelayed({
             if (authHelper.user!=null) {
                 startActivity(
@@ -32,14 +31,15 @@ class SplashActivity : AppCompatActivity() {
                         this@SplashActivity, MainActivity::class.java
                     )
                 )
+                finish()
             } else {
                 startActivity(
                     Intent(
                         this@SplashActivity, SignUpActivity::class.java
                     )
                 )
+                finish()
             }
         },3000)
-        finish()
     }
 }

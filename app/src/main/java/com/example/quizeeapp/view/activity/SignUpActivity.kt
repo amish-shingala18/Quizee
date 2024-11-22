@@ -44,6 +44,7 @@ class SignUpActivity : AppCompatActivity() {
                         if (signUpResult == "success") {
                             authHelper.checkUser()
                             Toast.makeText(this@SignUpActivity, "Email Registered Successfully",Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this@SignUpActivity, SignInActivity::class.java))
                         } else {
                             Toast.makeText(this@SignUpActivity,signUpResult, Toast.LENGTH_SHORT).show()
                         }

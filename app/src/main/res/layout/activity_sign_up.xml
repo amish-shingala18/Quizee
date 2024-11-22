@@ -49,6 +49,8 @@
             android:id="@+id/edtSignUpEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
             android:hint="Email" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,6 +82,8 @@
             android:id="@+id/edtSignUpPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
             android:hint="Password" />
     </com.google.android.material.textfield.TextInputLayout>
 
