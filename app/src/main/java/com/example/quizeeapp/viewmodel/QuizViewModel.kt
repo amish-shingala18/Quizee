@@ -1,5 +1,6 @@
 package com.example.quizeeapp.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -32,12 +33,14 @@ class QuizViewModel : ViewModel() {
     fun changeQuestion() {
         if (mutableIndex.value!! < 9) {
             checkAnswers()
+            Log.d("TAG", "changeQuestion: ++++++++++++++++++++++++++++   $optionSelected===========${quizLiveData.value!![index.value!!].correctAnswer}")
             mutableIndex.value = mutableIndex.value!! + 1
         }
     }
     fun checkAnswers(){
-        if(optionSelected== quizLiveData.value!![index.value!!].correctAnswer){
-            correctAnswer++
+        if(optionSelected==quizLiveData.value?.get(index.value!!)?.correctAnswer){
+            correctAnswer += 1
+            Log.d("TAG", "checkAnswers: =============$correctAnswer")
         }
     }
 }

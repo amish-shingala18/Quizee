@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -67,6 +68,7 @@ class QuizActivity : AppCompatActivity() {
                 binding.btnNext.setOnClickListener {
                     val intent = Intent(this, ResultActivity::class.java)
                     intent.putExtra("correctAnswer", quizViewModel.correctAnswer)
+                    Log.d("TAG", "onCreate: -------------------------${quizViewModel.correctAnswer}")
                     startActivity(intent)
                 }
             } else {
@@ -90,6 +92,7 @@ class QuizActivity : AppCompatActivity() {
     }
     private fun selectAtleastOne(){
         binding.cvOption1.setOnClickListener {
+            quizViewModel.optionSelected = binding.txtOption1.text.toString()
             if(binding.txtOption1.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                 binding.cvOption1.setCardBackgroundColor(resources.getColor(R.color.green))
             }else{
@@ -106,6 +109,7 @@ class QuizActivity : AppCompatActivity() {
             binding.btnNext.visibility=View.VISIBLE
         }
         binding.cvOption2.setOnClickListener {
+            quizViewModel.optionSelected = binding.txtOption2.text.toString()
             if(binding.txtOption2.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                 binding.cvOption2.setCardBackgroundColor(resources.getColor(R.color.green))
             }else{
@@ -122,6 +126,7 @@ class QuizActivity : AppCompatActivity() {
             binding.btnNext.visibility=View.VISIBLE
         }
         binding.cvOption3.setOnClickListener {
+            quizViewModel.optionSelected = binding.txtOption3.text.toString()
             if(binding.txtOption3.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                 binding.cvOption3.setCardBackgroundColor(resources.getColor(R.color.green))
             }else{
@@ -138,6 +143,7 @@ class QuizActivity : AppCompatActivity() {
             binding.btnNext.visibility=View.VISIBLE
         }
         binding.cvOption4.setOnClickListener {
+            quizViewModel.optionSelected = binding.txtOption4.text.toString()
             if(binding.txtOption4.text==quizViewModel.quizLiveData.value!![0].correctAnswer){
                 binding.cvOption4.setCardBackgroundColor(resources.getColor(R.color.green))
             }else{
