@@ -3,6 +3,7 @@
     <style name="Base.Theme.QuizeeApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/main</item>
     </style>
 
     <style name="Theme.QuizeeApp" parent="Base.Theme.QuizeeApp" />
