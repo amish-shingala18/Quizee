@@ -61,3 +61,17 @@ The **Quiz App** is an engaging Android application that allows users to test th
    - See immediate feedback with 🟢 green or 🔴 red highlighting.
 4. **View Results:**  
    - Check your final results on the **Result Screen**, along with correct answers for all questions.
+
+  ---
+
+  ## 📸 Screenshots
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fd873693-4872-4832-bd99-a8fcd353c6fb" width="200" height="400"/>
+  <img src="https://github.com/user-attachments/assets/7be27fb2-01a1-4dac-9fd6-4e3a792da449" width="200" height="400"/>
+  <img src="https://github.com/user-attachments/assets/51aa1507-939b-4b08-b69d-d797fb5ffcfe" width="200" height="400"/>
+  <img src="https://github.com/user-attachments/assets/eb270001-8402-4735-b412-11c5f28b9c99" width="200" height="400"/>
+  <img src="https://github.com/user-attachments/assets/8a2709bf-48f7-4860-98db-6122c17ac07b" width="200" height="400"/>
+  <img src="https://github.com/user-attachments/assets/1f7f45f5-b4a0-4486-a98b-4d7e24bff31e" width="200" height="400"/>
+  <img src="https://github.com/user-attachments/assets/cb9058a7-b15b-48a4-987a-ba784a7d75ea" width="200" height="400"/>  
+</p>
